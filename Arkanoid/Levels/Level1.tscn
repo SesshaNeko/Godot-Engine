@@ -1,0 +1,78 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Blocks/Bloque.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Blocks/GreenBloque.tscn" type="PackedScene" id=2]
+
+[node name="Level1" type="Node"]
+
+[node name="Bloque17" parent="." instance=ExtResource( 1 )]
+position = Vector2( 192, 288 )
+
+[node name="Bloque30" parent="." instance=ExtResource( 1 )]
+position = Vector2( 576, 288 )
+
+[node name="Bloque19" parent="." instance=ExtResource( 1 )]
+position = Vector2( 192, 256 )
+
+[node name="Bloque32" parent="." instance=ExtResource( 1 )]
+position = Vector2( 576, 256 )
+
+[node name="Bloque7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 192, 320 )
+
+[node name="Bloque15" parent="." instance=ExtResource( 1 )]
+position = Vector2( 576, 320 )
+
+[node name="GreenBloque18" parent="." instance=ExtResource( 2 )]
+position = Vector2( 288, 288 )
+
+[node name="GreenBloque31" parent="." instance=ExtResource( 2 )]
+position = Vector2( 672, 288 )
+
+[node name="GreenBloque17" parent="." instance=ExtResource( 2 )]
+position = Vector2( 288, 256 )
+
+[node name="GreenBloque30" parent="." instance=ExtResource( 2 )]
+position = Vector2( 672, 256 )
+
+[node name="GreenBloque5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 288, 320 )
+
+[node name="GreenBloque13" parent="." instance=ExtResource( 2 )]
+position = Vector2( 672, 320 )
+
+[node name="Bloque18" parent="." instance=ExtResource( 1 )]
+position = Vector2( 384, 288 )
+
+[node name="Bloque31" parent="." instance=ExtResource( 1 )]
+position = Vector2( 768, 288 )
+
+[node name="Bloque25" parent="." instance=ExtResource( 1 )]
+position = Vector2( 384, 256 )
+
+[node name="Bloque20" parent="." instance=ExtResource( 1 )]
+position = Vector2( 768, 256 )
+
+[node name="Bloque8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 384, 320 )
+
+[node name="Bloque16" parent="." instance=ExtResource( 1 )]
+position = Vector2( 768, 320 )
+
+[node name="GreenBloque19" parent="." instance=ExtResource( 2 )]
+position = Vector2( 480, 288 )
+
+[node name="GreenBloque32" parent="." instance=ExtResource( 2 )]
+position = Vector2( 864, 288 )
+
+[node name="GreenBloque20" parent="." instance=ExtResource( 2 )]
+position = Vector2( 480, 256 )
+
+[node name="GreenBloque21" parent="." instance=ExtResource( 2 )]
+position = Vector2( 864, 256 )
+
+[node name="GreenBloque8" parent="." instance=ExtResource( 2 )]
+position = Vector2( 480, 320 )
+
+[node name="GreenBloque16" parent="." instance=ExtResource( 2 )]
+position = Vector2( 864, 320 )

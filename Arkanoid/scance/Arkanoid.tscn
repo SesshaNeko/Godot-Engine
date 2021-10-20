@@ -1,0 +1,71 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://script/Noid.gd" type="Script" id=1]
+[ext_resource path="res://script/Arkanoid.gd" type="Script" id=2]
+[ext_resource path="res://Sprite/paddle.png" type="Texture" id=3]
+[ext_resource path="res://script/Pelota.gd" type="Script" id=4]
+[ext_resource path="res://Sprite/PNG/58-Breakout-Tiles.png" type="Texture" id=5]
+[ext_resource path="res://TileSet.tres" type="TileSet" id=6]
+[ext_resource path="res://shader/swirl.tres" type="Material" id=7]
+[ext_resource path="res://Без названия.jpg" type="Texture" id=8]
+[ext_resource path="res://shader/wall.tres" type="Material" id=9]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 9.85669
+height = 45.9606
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 16.1602
+
+[node name="Arkanoid" type="Node"]
+script = ExtResource( 1 )
+
+[node name="Player" type="Area2D" parent="."]
+position = Vector2( 512.828, 554.359 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Player"]
+position = Vector2( 0.115967, 0.231978 )
+scale = Vector2( 1.62758, 1.30929 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+rotation = 1.5708
+scale = Vector2( 1, 1.5 )
+shape = SubResource( 1 )
+
+[node name="Ball" type="Area2D" parent="."]
+position = Vector2( 512, 526 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Ball"]
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
+shape = SubResource( 2 )
+
+[node name="TileMap" type="TileMap" parent="."]
+material = ExtResource( 9 )
+scale = Vector2( 0.25, 0.25 )
+tile_set = ExtResource( 6 )
+cell_size = Vector2( 128, 128 )
+format = 1
+tile_data = PoolIntArray( 0, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 9, 1, 0, 10, 1, 0, 11, 1, 0, 12, 1, 0, 13, 1, 0, 14, 1, 0, 15, 1, 0, 16, 1, 0, 17, 1, 0, 18, 1, 0, 19, 1, 0, 20, 1, 0, 21, 1, 0, 22, 1, 0, 23, 1, 0, 24, 1, 0, 25, 1, 0, 26, 1, 0, 27, 1, 0, 28, 1, 0, 29, 1, 0, 30, 1, 0, 31, 1, 0, 65536, 1, 0, 65567, 1, 0, 131072, 1, 0, 131103, 1, 0, 196608, 1, 0, 196639, 1, 0, 262144, 1, 0, 262175, 1, 0, 327680, 1, 0, 327711, 1, 0, 393216, 1, 0, 393247, 1, 0, 458752, 1, 0, 458783, 1, 0, 524288, 1, 0, 524319, 1, 0, 589824, 1, 0, 589855, 1, 0, 655360, 1, 0, 655391, 1, 0, 720896, 1, 0, 720927, 1, 0, 786432, 1, 0, 786463, 1, 0, 851968, 1, 0, 851999, 1, 0, 917504, 1, 0, 917535, 1, 0, 983040, 1, 0, 983071, 1, 0, 1048576, 1, 0, 1048607, 1, 0, 1114112, 1, 0, 1114143, 1, 0, 1179648, 2, 0, 1179649, 2, 0, 1179650, 2, 0, 1179651, 2, 0, 1179652, 2, 0, 1179653, 2, 0, 1179654, 2, 0, 1179655, 2, 0, 1179656, 2, 0, 1179657, 2, 0, 1179658, 2, 0, 1179659, 2, 0, 1179660, 2, 0, 1179661, 2, 0, 1179662, 2, 0, 1179663, 2, 0, 1179664, 2, 0, 1179665, 2, 0, 1179666, 2, 0, 1179667, 2, 0, 1179668, 2, 0, 1179669, 2, 0, 1179670, 2, 0, 1179671, 2, 0, 1179672, 2, 0, 1179673, 2, 0, 1179674, 2, 0, 1179675, 2, 0, 1179676, 2, 0, 1179677, 2, 0, 1179678, 2, 0, 1179679, 2, 0 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer"]
+material = ExtResource( 7 )
+position = Vector2( 547.484, 338.084 )
+scale = Vector2( 48.0448, 23.4613 )
+texture = ExtResource( 8 )
+[connection signal="area_entered" from="Ball" to="Ball" method="_on_Pelota_area_entered"]
+[connection signal="body_entered" from="Ball" to="Ball" method="_on_Pelota_body_entered"]

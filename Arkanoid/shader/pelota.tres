@@ -1,0 +1,21 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform sampler2D diffuse;
+
+void fragment() {
+    vec4 alpha = texture(diffuse, UV);
+	float avg = (alpha.g + alpha.r + alpha.b)*0.3;
+	
+    if( alpha.y == 1.0 ) 
+	{
+        alpha.g = 0.0;
+    }
+
+    COLOR = alpha;
+}"
+
+[resource]
+shader = SubResource( 1 )
